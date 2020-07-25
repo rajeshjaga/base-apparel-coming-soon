@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+#main-container {
+  height: 100vh;
+  width: 100%;
+  background-image: url(../images/bg-pattern-desktop.svg);
+  background-size: 100% 100%;
+  background-repeat: repeat;
+}
+
+#main-container .container-inner {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 150px 1fr;
+      grid-template-rows: 150px 1fr;
+      grid-template-areas: "logo right-side" "message right-side";
+}
+
+#main-container .container-inner .logo {
+  grid-area: 'logo';
+  margin: 2em 5em;
+}
+
+#main-container .container-inner .message {
+  grid-area: 'message';
+  padding-left: 5em;
+}
+
+#main-container .container-inner .message h1 {
+  font-size: 4em;
+  margin-bottom: 0.5em;
+  color: #413a3a;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 20px;
+}
+
+#main-container .container-inner .message h1 span {
+  font-weight: 300;
+  color: #ce9797;
+}
+
+#main-container .container-inner .message p {
+  font-size: 1em;
+  font-weight: 400;
+  color: #ce9797;
+  width: 70%;
+  line-height: 2em;
+}
+
+#main-container .container-inner .message form {
+  width: 70%;
+  border-radius: 50px;
+  border: 1px solid #ce9797;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 1em;
+  padding-left: 1.5em;
+}
+
+#main-container .container-inner .message form input[type=email] {
+  background: transparent;
+  width: 80%;
+  font-family: inherit;
+  font-size: 1.1em;
+  color: #413a3a;
+}
+
+#main-container .container-inner .message form input[type=email]::-webkit-input-placeholder {
+  opacity: 0.5;
+  color: #ce9797;
+}
+
+#main-container .container-inner .message form input[type=email]:-ms-input-placeholder {
+  opacity: 0.5;
+  color: #ce9797;
+}
+
+#main-container .container-inner .message form input[type=email]::-ms-input-placeholder {
+  opacity: 0.5;
+  color: #ce9797;
+}
+
+#main-container .container-inner .message form input[type=email]::placeholder {
+  opacity: 0.5;
+  color: #ce9797;
+}
+
+#main-container .container-inner .message form input[type=email],
+#main-container .container-inner .message form button {
+  outline: none;
+  border: none;
+}
+
+#main-container .container-inner .message form .error {
+  display: none;
+  height: 50%;
+  padding: 1.4em 1em;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#main-container .container-inner .message form button {
+  background-image: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+  padding: 1.5em 4em;
+  border-radius: 50px;
+}
+
+#main-container .container-inner .right-side {
+  grid-area: 'right-side';
+  background-image: url(../images/hero-desktop.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  -ms-grid-column-align: end;
+      justify-self: end;
+  width: 70%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media screen and (max-width: 858px) {
+  body {
+    font-size: 14px;
+  }
+  #main-container {
+    text-align: center;
+  }
+  #main-container .container-inner {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 100px 1fr 1fr;
+        grid-template-rows: 100px 1fr 1fr;
+        grid-template-areas: "logo" "right-side" "message";
+  }
+  #main-container .container-inner .right-side {
+    width: 100%;
+    background-image: url(../images/hero-mobile.jpg);
+    background-size: cover;
+  }
+  #main-container .container-inner .message {
+    width: 95%;
+    padding: 0;
+    margin: 0 auto;
+  }
+  #main-container .container-inner .message form,
+  #main-container .container-inner .message p {
+    margin: 0.5em auto;
+  }
+  #main-container .container-inner .message form {
+    width: 90%;
+  }
+  #main-container .container-inner .message form button {
+    padding: 1em 2.8em;
+  }
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,133 @@
+@import './color';
+*,
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+#main-container {
+    height: 100vh;
+    width: 100%;
+    background-image: url(../images/bg-pattern-desktop.svg);
+    background-size: 100% 100%;
+    background-repeat: repeat;
+    .container-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 150px 1fr;
+        .logo {
+            grid-area: 'logo';
+            margin: 2em 5em;
+        }
+        .message {
+            grid-area: 'message';
+            padding-left: 5em;
+            h1 {
+                font-size: 4em;
+                margin-bottom: 0.5em;
+                color: $darkGrayishRed;
+                text-transform: uppercase;
+                font-weight: 600;
+                letter-spacing: 20px;
+                span {
+                    font-weight: 300;
+                    color: $desaturatedRed;
+                }
+            }
+            p {
+                font-size: 1em;
+                font-weight: 400;
+                color: $desaturatedRed;
+                width: 70%;
+                line-height: 2em;
+            }
+            form {
+                width: 70%;
+                border-radius: 50px;
+                border: 1px solid $desaturatedRed;
+                display: flex;
+                margin-top: 1em;
+                padding-left: 1.5em;
+                input[type=email] {
+                    background: transparent;
+                    width: 80%;
+                    font-family: inherit;
+                    font-size: 1.1em;
+                    color: $darkGrayishRed;
+                    &::placeholder {
+                        opacity: 0.5;
+                        color: $desaturatedRed;
+                    }
+                }
+                input[type=email],
+                button {
+                    outline: none;
+                    border: none;
+                }
+                .error {
+                    display: none;
+                    height: 50%;
+                    padding: 1.4em 1em;
+                    object-fit: cover;
+                }
+                button {
+                    background-image: $buttonGradient;
+                    padding: 1.5em 4em;
+                    border-radius: 50px;
+                }
+            }
+        }
+        .right-side {
+            grid-area: 'right-side';
+            background-image: url(../images/hero-desktop.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            justify-self: end;
+            width: 70%;
+            object-fit: cover;
+        }
+        grid-template-areas: "logo right-side" "message right-side";
+    }
+}
+
+@media screen and (max-width:858px) {
+    body {
+        font-size: 14px;
+    }
+    #main-container {
+        text-align: center;
+        .container-inner {
+            grid-template-columns: 1fr;
+            grid-template-rows: 100px 1fr 1fr;
+            grid-template-areas: "logo" "right-side" "message";
+            .right-side {
+                width: 100%;
+                background-image: url(../images/hero-mobile.jpg);
+                background-size: cover;
+            }
+            .message {
+                width: 95%;
+                padding: 0;
+                margin: 0 auto;
+                form,
+                p {
+                    margin: 0.5em auto;
+                }
+                form {
+                    width: 90%;
+                    button {
+                        padding: 1em 2.8em;
+                    }
+                }
+            }
+        }
+    }
+}
